@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+pydantic
+tiktoken
+selenium
+openai
+pdfplumber
+pip install slate3k
