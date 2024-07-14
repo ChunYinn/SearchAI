@@ -3,6 +3,7 @@ uvicorn
 pydantic
 tiktoken
 selenium
-openai
+openai>=1.0.0
 pdfplumber
-pip install slate3k
+# slate3k==0.5.3
+PyMuPDF

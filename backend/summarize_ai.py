@@ -1,14 +1,17 @@
 import os
 import tiktoken
-import openai
 from dotenv import load_dotenv
 from get_text_pdf import get_clean_text_from_pdf
+from openai import OpenAI
 
 # Load environment variables from .env file
 load_dotenv()
 
 # Retrieve OpenAI API key from environment variables
-openai.api_key = os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY")
+
+# Create an OpenAI client
+client = OpenAI(api_key=api_key)
 
 def truncate_text_to_fit_token_limit(text, max_token_length):
     # Assume 4 characters per token as a rough average
@@ -43,17 +46,16 @@ def summarize_text(clean_text):
     prompt = prompt_template + clean_text
 
     # Call OpenAI API to summarize the text
-    response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+    chat_completion = client.chat.completions.create(
         messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
         ],
+        model="gpt-3.5-turbo",
         max_tokens=1000  # Limit the length of the summary
     )
 
     # Extract the summarized text from the response
-    summarized_text = response['choices'][0]['message']['content'].strip()
+    summarized_text = chat_completion.choices[0].message.content.strip()
 
     return summarized_text
 
