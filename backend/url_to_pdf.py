@@ -61,6 +61,6 @@ def print_to_pdf(url, output_pdf_path):
         driver.quit()
 
 if __name__ == "__main__":
-    url = 'https://www.nejm.org/doi/full/10.1056/NEJMoa1411587'  # Replace with your desired URL
-    output_pdf_path = 'test3.pdf'
+    url = 'https://web.archive.org/web/20240117233627/https://www.theatlantic.com/podcasts/archive/2023/08/are-ai-relationships-real/674965/'  # Replace with your desired URL
+    output_pdf_path = 'testˋ.pdf'
     print_to_pdf(url, output_pdf_path)

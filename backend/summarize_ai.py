@@ -23,10 +23,15 @@ def truncate_text_to_fit_token_limit(text, max_token_length):
 def summarize_text(clean_text):
     # Define the prompt
     prompt_template = (
-        "You are a good summarizer that summarizes the text. "
-        "Include the original title of the text inside the output. "
-        "The output should be in the format: {title: \"\"} and {summarized content: \"\"}. "
-        "Here is the text to summarize:\n\n"
+        """You are a good summarizer that summarizes the text. 
+            Include the original title and author of the text in the output. 
+            If the title is unclear from the provided text, infer a suitable title based on the content. 
+            If the author is not mentioned, label the author as "Unknown." 
+            The output should be in the format: 
+            {title: "" author: ""} 
+            {summarized content: ""} 
+            Summarize the following article by providing a summary paragraph, followed by key themes and quotes that explore the themes. 
+            Here is the text to summarize:"""
     )
     
     # Define the maximum token length for the entire context
@@ -93,7 +98,7 @@ def calculate_price(token_count, model="gpt-3.5-turbo"):
 
 if __name__ == "__main__":
     # Extract clean text from PDF
-    clean_text = get_clean_text_from_pdf('test3.pdf')
+    clean_text = get_clean_text_from_pdf('test.pdf')
     text_count = len(clean_text)
     token_count = count_tokens(clean_text)
     print(f"Text count: {text_count}")

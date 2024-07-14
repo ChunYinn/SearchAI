@@ -16,7 +16,7 @@ def get_clean_text_from_pdf(pdf_path):
     
     return text.strip()
 
-# if __name__ == "__main__":
-#     pdf_path = "test3.pdf"
-#     clean_text = get_clean_text_from_pdf(pdf_path)
-#     print(clean_text)
+if __name__ == "__main__":
+    pdf_path = "test.pdf"
+    clean_text = get_clean_text_from_pdf(pdf_path)
+    print(clean_text)
