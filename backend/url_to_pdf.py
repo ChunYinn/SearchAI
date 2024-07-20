@@ -62,5 +62,5 @@ def print_to_pdf(url, output_pdf_path):
 
 if __name__ == "__main__":
     url = 'https://web.archive.org/web/20240117233627/https://www.theatlantic.com/podcasts/archive/2023/08/are-ai-relationships-real/674965/'  # Replace with your desired URL
-    output_pdf_path = 'testˋ.pdf'
+    output_pdf_path = 'test.pdf'
     print_to_pdf(url, output_pdf_path)

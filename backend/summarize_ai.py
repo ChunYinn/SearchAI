@@ -23,16 +23,21 @@ def truncate_text_to_fit_token_limit(text, max_token_length):
 def summarize_text(clean_text):
     # Define the prompt
     prompt_template = (
-        """You are a good summarizer that summarizes the text. 
-            Include the original title and author of the text in the output. 
-            If the title is unclear from the provided text, infer a suitable title based on the content. 
-            If the author is not mentioned, label the author as "Unknown." 
-            The output should be in the format: 
-            {title: "" author: ""} 
-            {summarized content: ""} 
-            Summarize the following article by providing a summary paragraph, followed by key themes and quotes that explore the themes. 
-            Here is the text to summarize:"""
-    )
+    """You are a good summarizer that summarizes the text. 
+    Include the original title, author, publication year (as PubYear , year), publication date (as PubDate, month and date), source (based on the URL source of the text content), and category (like Reddit post, YouTube transcript, blog post, etc.) in the output. 
+    If the title is unclear from the provided text, infer a suitable title based on the content. 
+    If the author is not mentioned, label the author as "Unknown." 
+    If the publication year or date is not mentioned, label them as "Unknown."
+    For the source, extract the main domain from the URL (e.g., www.youtube.com should be labeled as "YouTube").
+    Extract the year from the publication date to use as PubYear. 
+    The output should be in the format: 
+    {title: "", author: "", PubYear: "", PubDate: "", source: "", category: ""} 
+    {summarized content: ""} 
+    Summarize the following article by providing a summary paragraph, followed by key themes and quotes that explore the themes. 
+    Here is the text to summarize:"""
+)
+
+
     
     # Define the maximum token length for the entire context
     max_context_length = 16385
@@ -111,7 +116,7 @@ if __name__ == "__main__":
         
         # Calculate price
         price = calculate_price(token_count)
-        print(f"Estimated price: ${price:.5f}")
+        # print(f"Estimated price: ${price:.5f}")
         
     except Exception as e:
         print(f"Error: {e}")
