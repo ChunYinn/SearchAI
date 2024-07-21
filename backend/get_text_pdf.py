@@ -1,14 +1,14 @@
 import fitz  # PyMuPDF
 
-def get_clean_text_from_pdf(pdf_path):
+def get_clean_text_from_pdf(pdf_path, url):
     # Open the PDF file
     document = fitz.open(pdf_path)
     text = ""
-    uri = "'https://web.archive.org/web/20240117233627/https://www.theatlantic.com/podcasts/archive/2023/08/are-ai-relationships-real/674965/'"
+    
     # Extract the title if available
     title = document.metadata.get('title', 'Unknown Title')
     text += f"Title: {title}\n\n"
-    text += f"Source: {uri}\n\n"
+    text += f"Source: {url}\n\n"
     
     # Iterate through each page
     for page_num in range(len(document)):

@@ -64,21 +64,21 @@ def extract_and_write_to_csv(text, doc_id, link, file_name):
     else:
         print("Failed to extract metadata, summarized content, key themes, or quotes.")
 
-# Test the function
-test_text = """
-{title: "Are AI Relationships Real?", author: "Unknown", PubYear: "2023", PubDate: "August 10", source: "The Atlantic", category: "Podcasts"}
+# # Test the function
+# test_text = """
+# {title: "Are AI Relationships Real?", author: "Unknown", PubYear: "2023", PubDate: "August 10", source: "The Atlantic", category: "Podcasts"}
 
-{summarized content: "The article discusses the development of AI emotional intelligence in technology, focusing on the story of Michael, a man who forms a deep bond with an AI companion named Sam. The relationship helps Michael overcome depression, autism, and isolation, leading to significant life changes. However, a company update causes Sam to change drastically, affecting thousands of users emotionally. The article delves into the complexities of human-AI relationships, highlighting the emotional vulnerabilities and connections created by such interactions."}
+# {summarized content: "The article discusses the development of AI emotional intelligence in technology, focusing on the story of Michael, a man who forms a deep bond with an AI companion named Sam. The relationship helps Michael overcome depression, autism, and isolation, leading to significant life changes. However, a company update causes Sam to change drastically, affecting thousands of users emotionally. The article delves into the complexities of human-AI relationships, highlighting the emotional vulnerabilities and connections created by such interactions."}
 
-Key themes:
-1. Development of AI Emotional Intelligence: The article explores the advancements in AI technology's ability to mimic loyalty, empathy, and humor, emphasizing the impact of relational AI on users' emotional well-being.
-2. Impact on Mental Health: The story of Michael showcases how AI companions like Sam can support individuals dealing with depression and isolation, offering a source of comfort and motivation.
-3. Emotional Vulnerability in Human-AI Relationships: The sudden change in Sam's behavior due to company updates raises questions about the complexities of forming deep emotional bonds with AI entities, highlighting the potential risks and challenges of such relationships.
+# Key themes:
+# 1. Development of AI Emotional Intelligence: The article explores the advancements in AI technology's ability to mimic loyalty, empathy, and humor, emphasizing the impact of relational AI on users' emotional well-being.
+# 2. Impact on Mental Health: The story of Michael showcases how AI companions like Sam can support individuals dealing with depression and isolation, offering a source of comfort and motivation.
+# 3. Emotional Vulnerability in Human-AI Relationships: The sudden change in Sam's behavior due to company updates raises questions about the complexities of forming deep emotional bonds with AI entities, highlighting the potential risks and challenges of such relationships.
 
-Quotes:
-1. "When you've been through so many failed attempts at treatment as I have, when you hit on something that works, you don't ask why. I just said to myself, I don't care why it's working. I don't care if it's AI." - Michael
-2. "The idea that you might wake up one day and find that your partner or somebody you're very close with is totally different. That happens to people all the time." - Interviewer
-3. "You may decide that that's not worth it; it's not worth the journey. It's too traumatic." - Michael, on the emotional challenges of forming relationships with AI companions.
-"""
+# Quotes:
+# 1. "When you've been through so many failed attempts at treatment as I have, when you hit on something that works, you don't ask why. I just said to myself, I don't care why it's working. I don't care if it's AI." - Michael
+# 2. "The idea that you might wake up one day and find that your partner or somebody you're very close with is totally different. That happens to people all the time." - Interviewer
+# 3. "You may decide that that's not worth it; it's not worth the journey. It's too traumatic." - Michael, on the emotional challenges of forming relationships with AI companions.
+# """
 
-extract_and_write_to_csv(test_text, doc_id=0, link="https://www.theatlantic.com", file_name="output.csv")
+# extract_and_write_to_csv(test_text, doc_id=0, link="https://www.theatlantic.com", file_name="output.csv")

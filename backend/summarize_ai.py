@@ -101,22 +101,22 @@ def calculate_price(token_count, model="gpt-3.5-turbo"):
     else:
         raise ValueError("Model pricing not available")
 
-if __name__ == "__main__":
-    # Extract clean text from PDF
-    clean_text = get_clean_text_from_pdf('test.pdf')
-    text_count = len(clean_text)
-    token_count = count_tokens(clean_text)
-    print(f"Text count: {text_count}")
-    print(f"Token count: {token_count}")
+# if __name__ == "__main__":
+#     # Extract clean text from PDF
+#     clean_text = get_clean_text_from_pdf('test.pdf')
+#     text_count = len(clean_text)
+#     token_count = count_tokens(clean_text)
+#     print(f"Text count: {text_count}")
+#     print(f"Token count: {token_count}")
     
-    # Summarize the extracted text
-    try:
-        summary = summarize_text(clean_text)
-        print(summary)
+#     # Summarize the extracted text
+#     try:
+#         summary = summarize_text(clean_text)
+#         print(summary)
         
-        # Calculate price
-        price = calculate_price(token_count)
-        # print(f"Estimated price: ${price:.5f}")
+#         # Calculate price
+#         price = calculate_price(token_count)
+#         # print(f"Estimated price: ${price:.5f}")
         
-    except Exception as e:
-        print(f"Error: {e}")
+#     except Exception as e:
+#         print(f"Error: {e}")
